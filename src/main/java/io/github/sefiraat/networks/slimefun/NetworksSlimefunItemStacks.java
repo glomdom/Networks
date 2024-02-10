@@ -50,6 +50,7 @@ public class NetworksSlimefunItemStacks {
     public static final SlimefunItemStack NETWORK_VACUUM;
     public static final SlimefunItemStack NETWORK_VANILLA_GRABBER;
     public static final SlimefunItemStack NETWORK_VANILLA_PUSHER;
+    public static final SlimefunItemStack NETWORK_MINECART_PUSHER;
     public static final SlimefunItemStack NETWORK_WIRELESS_TRANSMITTER;
     public static final SlimefunItemStack NETWORK_WIRELESS_RECEIVER;
     public static final SlimefunItemStack NETWORK_PURGER;
@@ -342,6 +343,18 @@ public class NetworksSlimefunItemStacks {
             "the chosen vanilla inventory.",
             "You need to push items into this",
             "node from a Pusher."
+        );
+
+        NETWORK_MINECART_PUSHER = Theme.themedSlimefunItemStack(
+                "NTW_MINECART_PUSHER",
+                new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS),
+                Theme.MACHINE,
+                "Network Minecart Pusher",
+                "The Network Minecart Pusher will try",
+                "to push any item inside itself into",
+                "the chosen minecart inventory.",
+                "You need to push items into this",
+                "node from a Pusher."
         );
 
         NETWORK_WIRELESS_TRANSMITTER = Theme.themedSlimefunItemStack(
