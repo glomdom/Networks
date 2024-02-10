@@ -1,30 +1,7 @@
 package io.github.sefiraat.networks.slimefun;
 
 import io.github.sefiraat.networks.Networks;
-import io.github.sefiraat.networks.slimefun.network.NetworkAutoCrafter;
-import io.github.sefiraat.networks.slimefun.network.NetworkBridge;
-import io.github.sefiraat.networks.slimefun.network.NetworkCell;
-import io.github.sefiraat.networks.slimefun.network.NetworkControlV;
-import io.github.sefiraat.networks.slimefun.network.NetworkControlX;
-import io.github.sefiraat.networks.slimefun.network.NetworkController;
-import io.github.sefiraat.networks.slimefun.network.NetworkEncoder;
-import io.github.sefiraat.networks.slimefun.network.NetworkExport;
-import io.github.sefiraat.networks.slimefun.network.NetworkGrabber;
-import io.github.sefiraat.networks.slimefun.network.NetworkGreedyBlock;
-import io.github.sefiraat.networks.slimefun.network.NetworkImport;
-import io.github.sefiraat.networks.slimefun.network.NetworkMonitor;
-import io.github.sefiraat.networks.slimefun.network.NetworkPowerDisplay;
-import io.github.sefiraat.networks.slimefun.network.NetworkPowerNode;
-import io.github.sefiraat.networks.slimefun.network.NetworkPowerOutlet;
-import io.github.sefiraat.networks.slimefun.network.NetworkPurger;
-import io.github.sefiraat.networks.slimefun.network.NetworkPusher;
-import io.github.sefiraat.networks.slimefun.network.NetworkQuantumStorage;
-import io.github.sefiraat.networks.slimefun.network.NetworkQuantumWorkbench;
-import io.github.sefiraat.networks.slimefun.network.NetworkVacuum;
-import io.github.sefiraat.networks.slimefun.network.NetworkVanillaGrabber;
-import io.github.sefiraat.networks.slimefun.network.NetworkVanillaPusher;
-import io.github.sefiraat.networks.slimefun.network.NetworkWirelessReceiver;
-import io.github.sefiraat.networks.slimefun.network.NetworkWirelessTransmitter;
+import io.github.sefiraat.networks.slimefun.network.*;
 import io.github.sefiraat.networks.slimefun.network.grid.NetworkCraftingGrid;
 import io.github.sefiraat.networks.slimefun.network.grid.NetworkGrid;
 import io.github.sefiraat.networks.slimefun.tools.CraftingBlueprint;
@@ -71,6 +48,7 @@ public class NetworkSlimefunItems {
     public static final NetworkVacuum NETWORK_VACUUM;
     public static final NetworkVanillaGrabber NETWORK_VANILLA_GRABBER;
     public static final NetworkVanillaPusher NETWORK_VANILLA_PUSHER;
+    public static final NetworkMinecartPusher NETWORK_MINECART_PUSHER;
     public static final NetworkWirelessTransmitter NETWORK_WIRELESS_TRANSMITTER;
     public static final NetworkWirelessReceiver NETWORK_WIRELESS_RECEIVER;
     public static final NetworkPurger NETWORK_TRASH;
@@ -379,6 +357,17 @@ public class NetworkSlimefunItems {
                 OPTIC_GLASS.getItem(), new ItemStack(Material.HOPPER), OPTIC_GLASS.getItem(),
                 OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(),
                 OPTIC_GLASS.getItem(), new ItemStack(Material.HOPPER), OPTIC_GLASS.getItem(),
+            }
+        );
+
+        NETWORK_MINECART_PUSHER = new NetworkMinecartPusher(
+            NetworksItemGroups.NETWORK_ITEMS,
+            NetworksSlimefunItemStacks.NETWORK_MINECART_PUSHER,
+            RecipeType.ENHANCED_CRAFTING_TABLE,
+            new ItemStack[]{
+                OPTIC_GLASS.getItem(), new ItemStack(Material.MINECART), OPTIC_GLASS.getItem(),
+                OPTIC_GLASS.getItem(), NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(),
+                OPTIC_GLASS.getItem(), new ItemStack(Material.MINECART), OPTIC_GLASS.getItem(),
             }
         );
 
@@ -861,6 +850,7 @@ public class NetworkSlimefunItems {
         NETWORK_VACUUM.register(plugin);
         NETWORK_VANILLA_GRABBER.register(plugin);
         NETWORK_VANILLA_PUSHER.register(plugin);
+        NETWORK_MINECART_PUSHER.register(plugin);
         NETWORK_WIRELESS_TRANSMITTER.register(plugin);
         NETWORK_WIRELESS_RECEIVER.register(plugin);
         NETWORK_TRASH.register(plugin);
